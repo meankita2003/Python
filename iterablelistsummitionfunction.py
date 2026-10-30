@@ -1,0 +1,4 @@
+def main():
+    marks= []
+    marks
+    

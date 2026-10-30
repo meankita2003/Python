@@ -1,0 +1,22 @@
+from transformers import AutoTokenizer
+
+# Load Pretained tokenizer
+tokenizer = AutoTokenizer.from_pretrained("gpt2")
+
+# input Sentence
+Sentance = "python is easy prorammering Language I Love IT" 
+
+
+#Covert the sentance into tokns 
+tokens = tokenizer.tokenizer(sentance)
+
+
+token_ids = tokenizer.encode(
+    sentance,
+    add_special_tokens = false
+)
+
+#convert token ids back to text
+decoded = tokenzer.decode(token_ids)
+
+print("Orginal Sentance ")
