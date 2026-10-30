@@ -1,7 +1,7 @@
 from ollama import chat
 
 #select the local LLM
-model = "llama3.2:lb"
+model = "llama3.2"
 
 # define prompts
 prompt = [
@@ -22,7 +22,14 @@ prompt = [
     Input: javascript
     output: """
 ]
+prompts = [
+    "What is Python?",
+    "Explain Machine Learning",
+    "What is Artificial Intelligence?"
+]
 
+for index, prompt in enumerate(prompts, start=1):
+    print(index, prompt)
 # Execute every prompt 
 for index, prompt in enumerate(prompts, start=1):
     print("_"*30)
@@ -31,9 +38,10 @@ for index, prompt in enumerate(prompts, start=1):
 
     response = chat(
         model = model,
-        message = [
+        messages = [
             {
                 "role": "user"
+               
             }
 
         ]
